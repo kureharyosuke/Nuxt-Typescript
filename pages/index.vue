@@ -5,6 +5,8 @@
     <h1>{{ TypeScript }}</h1>
     <h1>{{ Nuxt }}</h1>
     <h1>{{ fullMessage }}</h1>
+    <h3>{{ counter }}</h3>
+    <button @click="incrementcounter()">Button</button>
   </div>
 </template>
 
@@ -18,9 +20,14 @@ export default class HelloVue extends Vue {
   Vue = 'Vue 😥 '
   TypeScript = 'TypeScript 😰 '
   Nuxt = 'Nuxt 😱 '
+  counter = 0
 
-  get fullMessage() {
+  get fullMessage(): String {
     return this.Hello + this.Vue + this.TypeScript + this.Nuxt
+  }
+
+  incrementcounter() {
+    this.counter++
   }
 }
 </script>
